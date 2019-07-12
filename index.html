@@ -14,7 +14,11 @@
     <div class="nav-wrapper container">
       
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-         
+         	<li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+           <li class="logged-in">
+            <a href="#" class="grey-text" id="logout">Logout</a>
           </li>
           <li class="logged-out">
             <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
@@ -69,7 +73,22 @@
       </form>
     </div>
   </div>
- 
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
   
   <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-auth.js"></script>
@@ -95,7 +114,7 @@
   firebase.initializeApp(firebaseConfig);
 
   const auth = firebase.auth();
-  const db = firebase.firestore();
+
 
   
 </script>
