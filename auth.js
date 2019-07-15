@@ -8,12 +8,11 @@ auth.onAuthStateChanged(user => {
   }
 })
 
-// signup
+
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
   
-  // get user info
   const username = signupForm['uname'].value;
   const firstname = signupForm['fname'].value;
   const lastname = signupForm['lname'].value;
@@ -22,16 +21,13 @@ signupForm.addEventListener('submit', (e) => {
   const password = signupForm['signup-password'].value;
   const dateofbirth = signupForm['start'].value;
 
-  // sign up the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    // close the signup modal & reset form
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
     signupForm.reset();
   });
 });
 
-// logout
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
